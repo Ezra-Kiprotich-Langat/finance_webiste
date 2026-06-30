@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import ServiceCategoryModel, ServiceRequestModel, ServiceCommentModel
 
-# Register your models here.
+admin.site.register(ServiceCategoryModel)
+admin.site.register(ServiceRequestModel)
+admin.site.register(ServiceCommentModel)

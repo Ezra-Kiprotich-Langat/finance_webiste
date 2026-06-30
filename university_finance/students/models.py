@@ -1,8 +1,8 @@
 from django.db import models
-from django.contrib.auth.models import User
+from django.conf import settings
 
 class StudentProfileModel(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     registration_number = models.CharField(max_length=20, unique=True)
     full_name = models.CharField(max_length=50)
     programme = models.CharField(max_length=100)
