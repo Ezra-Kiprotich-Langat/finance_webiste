@@ -1,3 +1,9 @@
-from django.shortcuts import render
+from rest_framework import viewsets
+from rest_framework.permissions import IsAuthenticated
+from .models import StudentProfileModel
+from .serializers import StudentProfileSerializer
 
-# Create your views here.
+class StudentProfileViewSet(viewsets.ModelViewSet):
+    queryset = StudentProfileModel.objects.all()
+    serializer_class = StudentProfileSerializer
+    permission_classes = [IsAuthenticated]
